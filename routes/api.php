@@ -18,8 +18,14 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::group(['prefix' => '/auth', ['middleware' => 'throttle:20,5']], function() {
-    Route::post('/register', 'Auth\RegisterController@register');
-    Route::post('/login', 'Auth\LoginController@login');
-});
+// Route::group(['prefix' => '/auth', ['middleware' => 'throttle:20,5']], function() {
+//     Route::post('/register', 'Auth\RegisterController@register');
+//     Route::post('/login', 'Auth\LoginController@login');
+// });
+
+// Login
+Route::post('login', 'Auth\UsersController@authenticate');
+Route::post('authenticate', 'Auth\UsersController@authenticate');
+// Register
+Route::post('register', 'Auth\UsersController@register');
 

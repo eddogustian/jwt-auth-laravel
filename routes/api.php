@@ -29,3 +29,10 @@ Route::post('authenticate', 'Auth\UsersController@authenticate');
 // Register
 Route::post('register', 'Auth\UsersController@register');
 
+// Employee crud
+Route::get('employees', 'EmployeesController@index');
+Route::post('employees', 'EmployeesController@store');
+Route::get('employees/{id}', 'EmployeesController@show');
+Route::put('employees/{id}', 'EmployeesController@update');
+Route::delete('employees/{id}', 'EmployeesController@destroy');
+
